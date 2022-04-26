@@ -38,9 +38,17 @@ class _WelcomePageState extends State<WelcomePage> {
                     Column(
                       children: [
                         AppLargeText(
-                            text: 'Viajes',
+                            text: 'VIAJES',
                             color: Colors.black,
-                            size: resolution.dp(5.5))
+                            size: resolution.dp(5.5)),
+                        Text(
+                          'Montañas',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: resolution.dp(3.8),
+                              fontFamily: 'fontShadow',
+                              fontWeight: FontWeight.w300),
+                        )
                       ],
                     )
                   ],
