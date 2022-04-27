@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_cubit/views/NavPages/main_page.dart';
 import 'package:flutter_cubit/views/welcome_page.dart';
 
@@ -12,6 +13,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
     return MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,

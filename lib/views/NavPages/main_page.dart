@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cubit/misc/colors.dart';
 import 'package:flutter_cubit/views/NavPages/bar_item_pages.dart';
 import 'package:flutter_cubit/views/NavPages/home_page.dart';
 import 'package:flutter_cubit/views/NavPages/my_page.dart';
