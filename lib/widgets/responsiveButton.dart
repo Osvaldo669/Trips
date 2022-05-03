@@ -17,6 +17,12 @@ class ResponsiveButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          isResponsive == true
+              ? Text(
+                  'Comprar ahora',
+                  style: TextStyle(color: Colors.white),
+                )
+              : Text(''),
           Image.asset(
             'img/button-one.png',
           )

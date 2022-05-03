@@ -3,6 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_cubit/misc/colors.dart';
 import 'package:flutter_cubit/tools/resolution.dart';
+import 'package:flutter_cubit/widgets/appButton.dart';
+import 'package:flutter_cubit/widgets/responsiveButton.dart';
 import 'package:flutter_cubit/widgets/text_appLarge.dart';
 
 class DetailPage extends StatefulWidget {
@@ -62,9 +64,9 @@ class _DetailPageState extends State<DetailPage> {
                               color: AppColors.mainColor,
                               size: resolution.dp(4)),
                           AppLargeText(
-                              text: '\$300',
+                              text: '\$300.00',
                               color: Colors.grey,
-                              size: resolution.dp(2))
+                              size: resolution.dp(3))
                         ],
                       ),
                       Row(
@@ -105,27 +107,52 @@ class _DetailPageState extends State<DetailPage> {
                             size: resolution.dp(1.5)),
                       ),
                       Container(
+                        margin: EdgeInsets.only(top: 10),
                         child: Wrap(
                           children: List.generate(
                               5,
-                              (index) => Container(
-                                    margin: const EdgeInsets.only(
-                                        right: 10, top: 20),
-                                    width: 50,
-                                    height: 50,
-                                    decoration: BoxDecoration(
-                                        color: Colors.red,
-                                        borderRadius:
-                                            BorderRadius.circular(15)),
-                                    child: Center(
-                                      child: Text((index + 1).toString()),
-                                    ),
+                              (index) => AppButton(
+                                    margin: 15,
+                                    color: AppColors.buttonBackground,
+                                    text: (index + 1).toString(),
                                   )),
                         ),
-                      )
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 10),
+                        child: AppLargeText(
+                            text: 'Descripcion',
+                            color: Colors.black,
+                            size: resolution.dp(2.5)),
+                      ),
+                      AppLargeText(
+                          text:
+                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut venenatis condimentum dolor, ut lacinia libero pulvinar vitae. Suspendisse auctor nunc velit, nec imperdiet ante commodo vel. Proin in orci sed ante accumsan malesuada. Vestibulum ac vestibulum elit.',
+                          color: Colors.grey,
+                          size: resolution.dp(1.5)),
                     ],
                   ),
-                ))
+                )),
+            Positioned(
+              left: 15,
+              bottom: 10,
+              width: resolution.width - 30,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  AppButton(
+                    margin: 0,
+                    color: Colors.white,
+                    isIcon: true,
+                    icon: Icons.favorite_border,
+                  ),
+                  ResponsiveButton(
+                    isResponsive: true,
+                    width: resolution.dp(25),
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
