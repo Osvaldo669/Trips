@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_cubit/cubit/app_cubits.dart';
 import 'package:flutter_cubit/misc/colors.dart';
 import 'package:flutter_cubit/tools/resolution.dart';
 import 'package:flutter_cubit/widgets/responsiveButton.dart';
@@ -66,9 +68,18 @@ class _WelcomePageState extends State<WelcomePage> {
                           ),
                         ),
                         SizedBox(height: resolution.hp(4)),
-                        ResponsiveButton(
-                          width: resolution.dp(12),
-                          height: resolution.dp(5),
+                        GestureDetector(
+                          onTap: () {
+                            //Se utiliza bloc para el manejo de los estados
+                            BlocProvider.of<AppCubits>(context)
+                                .getData(); //Invocamos el metodo para llamar a la api
+                          },
+                          child: Container(
+                            child: ResponsiveButton(
+                              width: resolution.dp(12),
+                              height: resolution.dp(5),
+                            ),
+                          ),
                         )
                       ],
                     ),
